@@ -82,7 +82,6 @@ Ao ativar o início automático, o script registra um serviço `systemd` (`darko
 
 Este projeto parte do script **[SSH-over-OTG-for-ArkOS](https://github.com/carrothu-cn/SSH-over-OTG-for-ArkOS)**, de [carrothu-cn](https://github.com/carrothu-cn) (licenciado sob GPL-3.0), que por sua vez cita como base o trabalho original de [u/AlternativeRoom4499 no r/R36S](https://www.reddit.com/r/R36S/comments/1kzwn5d/ssh_over_otg_on_arkos_installed_r36sc/).
 
-Adaptação e extensão (compartilhamento de Internet, autostart, detecção de status, etc.): **@robadel** (raoni07@gmail.com)
 
 ## Licença
 
