@@ -2,8 +2,6 @@
 
 Script para dispositivos ArkOS/dArkOS (R36S e compatíveis) que ativa uma rede USB via OTG diretamente do menu de ferramentas do console, oferecendo **SSH** e **compartilhamento de Internet do Windows** ao mesmo tempo — tudo controlado por uma interface em `dialog`, navegável pelo joystick do próprio aparelho.
 
-> Script: `OTG Over Windows.sh`
-
 ## Sobre
 
 Ao conectar o console num PC com Windows via cabo USB, o script cria um gadget USB (RNDIS/ECM) que aparece no Windows como um adaptador de rede. Se o **Compartilhamento de Conexão com a Internet (ICS)** estiver ativado nesse adaptador, o console recebe IP via DHCP do próprio Windows e passa a ter acesso à Internet — além de já subir o serviço SSH automaticamente, para acesso remoto via `ssh ark@<IP>`.
@@ -31,7 +29,7 @@ Ao conectar o console num PC com Windows via cabo USB, o script cria um gadget U
 
 ## Instalação
 
-1. Copie `OTG Over Windows.sh` para a pasta de ferramentas do seu ArkOS/dArkOS (geralmente `/roms/tools/` ou `/opt/system/Tools/`, dependendo da build).
+1. Copie `OTG Over Windows.sh` para a pasta de tools ou ports do seu ArkOS/dArkOS (geralmente `/roms/tools/` ou `/roms/ports/`).
 
 ## Uso
 
@@ -57,26 +55,10 @@ Ao ativar o início automático, o script registra um serviço `systemd` (`darko
 
 ## Solução de problemas
 
-- **IP `169.254.x.x` ou nenhum IP:** o Windows não está compartilhando a Internet nesse adaptador. Revise o ICS (opção 4 do menu tem o passo a passo).
+- **IP `169.254.x.x` ou nenhum IP:** o Windows não está compartilhando a Internet nesse adaptador. Revise o ICS (opção 5 do menu tem o passo a passo).
 - **Interface `usb0` não aparece:** verifique se o cabo USB suporta dados (alguns cabos são só de energia) e se a porta do console tem suporte a modo gadget.
 - **Rede ativa mas sem SSH:** confirme que o pacote de SSH está instalado e que o usuário `ark` existe no sistema.
 - **Conflito com outro script de rede USB:** se você também usa a versão "SSH isolado" (rede fixa `192.168.7.x`, sem Internet), o script detecta o gadget concorrente e oferece desativá-lo antes de continuar.
-
-## Changelog
-
-### v0.2
-- Detecção de UDC via glob (sem depender de parsing de `ls`)
-- Detecção de IP inválido cobrindo tanto IP vazio quanto `169.254.*`
-- Captura e finalização correta do PID do `sshd` em modo fallback
-- Lógica de status de rede centralizada numa única função, eliminando duplicação
-- Checagem de dependências (`dialog`, `ip`) antes de iniciar
-- Detecção de gadget conflitante com o script SSH-over-OTG original
-- Confirmação antes de desativar uma rede USB ativa
-- Rotação do log de boot, sem duplicação de linhas ao rodar via `systemd`
-- `ExecStartPre` do serviço trocado de `sleep` fixo para `udevadm settle`
-
-### v0.1
-- Versão inicial, com suporte a Internet (ICS) somado ao SSH, sobre a base do script original de SSH isolado
 
 ## Créditos
 
