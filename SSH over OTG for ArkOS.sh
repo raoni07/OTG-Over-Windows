@@ -5,7 +5,6 @@
 # e em SSH over OTG for ArkOS: https://github.com/carrothu-cn/SSH-over-OTG-for-ArkOS
 #
 # Changelog v0.6:
-#   - Compatibilidade multi-firmware (ArkOS, dArkOS-RE, dArkOSen e derivados)
 #   - Detecção automática do idioma configurado no EmulationStation
 #   - Suporte a Português, Espanhol, Chinês, Japonês, Italiano, Russo e Inglês
 # ==============================================================================
