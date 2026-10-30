@@ -67,7 +67,7 @@ Este projeto parte do script **[SSH-over-OTG-for-ArkOS](https://github.com/carro
 
 ## Licença
 
-O projeto-base (SSH-over-OTG-for-ArkOS) é licenciado sob **GPL-3.0**. Como este script é um trabalho derivado dele, o mais consistente é distribuí-lo sob a mesma licença — ao criar o repositório no GitHub, use o template **"GNU General Public License v3.0"** na hora de gerar o arquivo `LICENSE`. *(Isso é só uma orientação prática, não assessoria jurídica — vale confirmar os termos da GPL-3.0 se tiver dúvida sobre como isso se aplica ao seu caso.)*
+O projeto-base (SSH-over-OTG-for-ArkOS) é licenciado sob **GPL-3.0**.
 
 ## Aviso
 
